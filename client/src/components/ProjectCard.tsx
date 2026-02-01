@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom"
 import { useState } from "react";
 
 import { EllipsisIcon, ImageIcon, Loader2Icon, PlaySquareIcon, Share2Icon, Trash2Icon } from "lucide-react";
+import { GhostButton, PrimaryButton } from "./Buttons";
 
 
 const ProjectCard = ({ gen, setGenerations, forCommunity = false }:
@@ -125,10 +126,24 @@ const ProjectCard = ({ gen, setGenerations, forCommunity = false }:
 
                     {/* user prompt */}
                     {gen.userPrompt && (
-                        <div className="mt-3">
-                            <div className="text-sm text-gray-300">{gen.userPrompt}</div>
+                        <div className="mt-2">
+                            <div className="text-xs text-gray-300">{gen.userPrompt}</div>
                         </div>
                     )}
+
+                    {/* buttons */}
+
+                    {!forCommunity && (
+                        <div className="mt-4 grid grid-cols-2 gap-3">
+                            <GhostButton className="text-xs justify-center" onClick={()=> {navigate(`/result/${gen.id}`); scrollTo(0,0)}}>
+                                View Details
+                            </GhostButton>
+                            <PrimaryButton className="rounded-md" onClick={()=> togglePublish(gen.id)}>
+                                {gen.isPublished ? 'Unpublish' : 'Publish'}
+                            </PrimaryButton>
+                        </div>
+                    )}
+
                 </div>
             </div>
         </div>
