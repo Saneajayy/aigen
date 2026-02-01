@@ -46,6 +46,8 @@ const ProjectCard = ({ gen, setGenerations, forCommunity = false }:
 
                     </div>
 
+                    {/* my actions */}
+
                     {/* Source images */}
                     <div className="absolute right-3 bottom-3">
                         <img src={gen.uploadedImages[0]} alt='product' className="w-16 h-16 object-cover rounded-full animate-float" />
