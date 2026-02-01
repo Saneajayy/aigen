@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 
 import { useState } from "react";
 
-import { Loader2Icon } from "lucide-react";
+import { EllipsisIcon, Loader2Icon } from "lucide-react";
 
 const ProjectCard = ({ gen, setGenerations, forCommunity = false }:
     {
@@ -47,6 +47,13 @@ const ProjectCard = ({ gen, setGenerations, forCommunity = false }:
                     </div>
 
                     {/* my actions */}
+                    {!forCommunity && (
+                        <div className="absolute right-3 top-3 sm:opacity-0 group-hover:opacity-100 transition flex items-center gap-2">
+                            <div className="absolute top-3 right-3">
+                                <EllipsisIcon className="ml-auto bg-black/10 rounded-full p-1 size-7"/>
+                            </div>
+                        </div>
+                    )}
 
                     {/* Source images */}
                     <div className="absolute right-3 bottom-3">
