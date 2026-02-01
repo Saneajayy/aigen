@@ -70,6 +70,11 @@ const ProjectCard = ({ gen, setGenerations, forCommunity = false }:
                                 })}</p>
                             )}
                         </div>
+                        <div className="text-right">
+                            <div className="mt-2 flex flex-col items-end gap-1">
+                                <span className="text-xs px-2 py-1 bg-white/5 rounded-full">Aspect:{gen.aspectRatio}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
