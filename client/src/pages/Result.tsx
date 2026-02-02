@@ -52,8 +52,9 @@ const Result = () => {
               </div>
           </div>
           {/* side bar actions */}
-          <div className="space-y-6">
-            {/* download buttons */}
+          <div className="space-y-6"> 
+            
+            {/* download buttonss */}
                   <div className="glass-panel p-6 rounded-2xl">
                     <h3 className="text-xl font-semibold mb-4">Actions</h3>
                     <div className="flex flex-col gap-3">
