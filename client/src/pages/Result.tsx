@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import type { Project } from "../types"
 import { dummyGenerations } from "../assets/assets"
-import {  ImageIcon, Loader2Icon, RefreshCwIcon, VideoIcon } from "lucide-react"
+import {  ImageIcon, Loader2Icon, RefreshCwIcon, SparkleIcon, VideoIcon } from "lucide-react"
 import {Link} from 'react-router-dom'
-import { GhostButton } from "../components/Buttons"
+import { GhostButton, PrimaryButton } from "../components/Buttons"
 
 
 const Result = () => {
@@ -16,6 +16,10 @@ const Result = () => {
       setProjectData(dummyGenerations[0])
       setLoading(false)
     },2000)
+  }
+
+  const handleGenerateVideo = async () => {
+    setIsGenerating(true)
   }
 
   useEffect(()=>{
@@ -76,8 +80,27 @@ const Result = () => {
                   </div>
 
             {/* generate video buttons */}
-                  <div>
-
+                  <div className="glass-panel p-6 rounded-2xl relative overflow-hidden">
+                    <div className="absolute top-0 right-0 p-4 opacity-10">
+                      <VideoIcon className="size-24"/>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2">Video Magic</h3>
+                    <p className="text-gray-400 text-sm mb-6">Turn this static image into a dynamic video for social media.</p>
+                    {!project.generatedVideo ? (
+                      <PrimaryButton onClick={handleGenerateVideo}
+                      disabled = {isGenerating} className="w-full">
+                        {isGenerating ? (
+                          <>Generating Video...</>
+                        ) : (
+                         <> <SparkleIcon className="size-4"/>
+                        Generate Video </>
+                        )}
+                        </PrimaryButton>
+                    ) : (
+                      <div className="p-3 bg-green-500/10 border border-green-500/20 rounded-xl text-green-400 text-center text-sm font-medium">
+                        Video Generated Successfully !
+                      </div>
+                    )}
                   </div>
           </div>
         </div>
