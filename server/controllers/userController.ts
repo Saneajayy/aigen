@@ -41,7 +41,8 @@ export const getProjectById = async (req:Request , res:Response) => {
     try {
         
         const {userId} = req.auth();
-        const {projectId} = req.params;
+        const projectId = req.params.projectId as string;
+
 
         const project = await prisma.project.findUnique({
             where:{id: projectId,userId}
@@ -62,7 +63,8 @@ export const toggleProjectPublic = async (req:Request , res:Response) => {
     try {
 
         const {userId} = req.auth();
-        const {projectId} = req.params;
+        const projectId = req.params.projectId as string;
+
 
         const project = await prisma.project.findUnique({
             where:{id: projectId,userId}
