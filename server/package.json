@@ -18,6 +18,7 @@
     "@prisma/adapter-pg": "^7.3.0",
     "@prisma/client": "^7.3.0",
     "@sentry/node": "^10.38.0",
+    "axios": "^1.13.4",
     "cloudinary": "^2.9.0",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
