@@ -3,8 +3,16 @@ import Title from "../components/Title"
 import UploadZone from "../components/UploadZone"
 import { Loader2Icon, RectangleHorizontalIcon, RectangleVerticalIcon, Wand2Icon } from "lucide-react"
 import { PrimaryButton } from "../components/Buttons"
+import { useAuth, useUser } from "@clerk/clerk-react"
+import { useNavigate } from "react-router-dom"
+import toast from "react-hot-toast"
+import api from "../configs/axios"
 
 const Generator = () => {
+
+    const {user} = useUser()
+    const {getToken} = useAuth()
+    const navigate = useNavigate()
 
     const [name,setName] = useState('')
     const [productName,setProductName] = useState('')
@@ -13,7 +21,7 @@ const Generator = () => {
     const [productImage,setProductImage] = useState<File| null>(null)
     const [modelImage,setModelImage] = useState<File| null>(null)
     const [userPrompt,setUserPrompt] = useState('')
-    const [isGenerating,setIsGenerating] = useState(true)
+    const [isGenerating,setIsGenerating] = useState(false)
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, type:'product' | 'model')=> {
         if(e.target.files && e.target.files[0]) {
@@ -24,6 +32,31 @@ const Generator = () => {
 
     const handleGenerate = async (e: React.FormEvent<HTMLFormElement>)=> {
         e.preventDefault();
+        if(!user) return toast.error('Please Login to Generate')
+        if(!productImage || !modelImage || !name || !productName || !aspectRatio) return toast.error('Please Fill all the required fields')
+
+        try {
+            setIsGenerating(true);
+            const formData = new FormData();
+            formData.append('name',name)
+            formData.append('productName',productName)
+            formData.append('productDescription',productDescription)
+            formData.append('userPrompt',userPrompt)
+            formData.append('aspectRatio',aspectRatio)
+            formData.append('images',productImage)
+            formData.append('images',modelImage)
+
+            const token = await getToken()
+            const { data } = await api.post('/api/project/create', formData, {headers: {Authorization:`Bearer ${token}`}})
+
+            toast.success(data.message)
+            navigate('/result/' + data.projectId)
+            
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } catch (error: any) {
+            setIsGenerating(false);
+            toast.error(error?.response?.data?.message || error.message)
+        }
     }
     
 
@@ -50,7 +83,7 @@ const Generator = () => {
                     <input type="text" id="ProductName" value={productName} onChange={(e)=>setProductName(e.target.value)} placeholder="Name your product" required className="w-full bg-white/3 rounded-lg border-2 p-4 text-sm border-violet-200/10 focus:border-violet-500/50 outline-none transition-all"/>
                 </div>
                 <div className="mb-4 text-gray-300">
-                    <label htmlFor="ProductDescription" className="block text-sm mb-4">Project Description <span className="txt-xs text-violet-400">(optional)</span></label>
+                    <label htmlFor="ProductDescription" className="block text-sm mb-4">Project Description <span className="text-xs text-violet-400">(optional)</span></label>
                     <textarea name="" id="productDescription" rows={4} value={productDescription} onChange={(e)=>setProductDescription(e.target.value)} placeholder="Enter the description of the project" className="w-full bg-white/3 rounded-lg border-2 p-4 text-sm border-violet-200/10 focus:border-violet-500/50 outline-none resize-none transition-all"/>
                 </div>
 
@@ -62,7 +95,7 @@ const Generator = () => {
                     </div>
                 </div>
                 <div className="mb-4 text-gray-300">
-                    <label htmlFor="userPrompt" className="block text-sm mb-4">User prompt  <span className="txt-xs text-violet-400">(optional)</span></label>
+                    <label htmlFor="userPrompt" className="block text-sm mb-4">User prompt  <span className="text-xs text-violet-400">(optional)</span></label>
                     <textarea name="" id="userPrompt" rows={4} value={userPrompt} onChange={(e)=>setUserPrompt(e.target.value)} placeholder="Describe how you want the narration to be." className="w-full bg-white/3 rounded-lg border-2 p-4 text-sm border-violet-200/10 focus:border-violet-500/50 outline-none resize-none transition-all"/>
                 </div>
             </div>
