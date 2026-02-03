@@ -49,10 +49,10 @@ const clerkWebHooks = async (req: Request,res:Response) => {
                   break;
             }
 
-            case "payementAttempt.updated": {
+            case "paymentAttempt.updated": {
                 if((data.charge_type === "recurring" || data.charge_type === "checkout") && data.status === "paid") {
                     const credits = {pro:80,premium:240,}
-                    const clerkUserId = data?.payer?.userId;
+                    const clerkUserId = data?.payer?.user_id;
                     const planId: keyof typeof credits = data?.subscription_items?.[0]?.plan?.slug;
 
                     if(planId !== "pro" && planId !== "premium") {
