@@ -56,6 +56,7 @@ const Result = () => {
       console.log(error);
     }
   }
+  // working fine
 
   useEffect(()=>{
     if(user && !project.id){
