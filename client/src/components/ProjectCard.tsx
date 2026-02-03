@@ -8,6 +8,7 @@ import { EllipsisIcon, ImageIcon, Loader2Icon, PlaySquareIcon, Share2Icon, Trash
 import { GhostButton, PrimaryButton } from "./Buttons";
 import { useAuth } from "@clerk/clerk-react";
 import toast from "react-hot-toast";
+import api from "../configs/axios";
 
 
 const ProjectCard = ({ gen, setGenerations, forCommunity = false }:
@@ -33,13 +34,27 @@ const ProjectCard = ({ gen, setGenerations, forCommunity = false }:
             toast.success(data.message)
 
            
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (error:any) {
             toast.error(error?.response?.data?.message || error.message);
             console.log(error);
         }
     }
     const togglePublish = async (projectId : string)=> {
-        console.log(projectId)
+        try {
+            const token = await getToken();
+            const {data} = await api.get(`/api/user/publish/${projectId}` , {
+                headers:{Authorization: `Bearer ${token}`}
+            })
+            setGenerations((generations)=>generations.map((gen)=>gen.id === projectId ? {...gen, isPublished: data.isPublished} : gen));
+            toast.success(data.isPublished ? 'Project published' : 'Project unpublished');
+
+           
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } catch (error:any) {
+            toast.error(error?.response?.data?.message || error.message);
+            console.log(error);
+        }
     }
 
     return (

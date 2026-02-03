@@ -30,6 +30,7 @@ const MyGenerations = () => {
             
 
 
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           } catch (error:any) {
             toast.error(error?.response?.data?.message || error.message)
             console.log(error);
