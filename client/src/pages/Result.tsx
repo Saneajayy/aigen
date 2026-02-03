@@ -41,7 +41,7 @@ const Result = () => {
     setIsGenerating(true)
     try {
       const token = await getToken();
-      const {data} = await api.post('/api/projec/video', {projectId}, {
+      const {data} = await api.post('/api/project/video', {projectId}, {
         headers: {Authorization:`Bearer ${token}`}
       })
       setProjectData(prev => ({...prev, generatedVideo: data.videoUrl, isGenerating: false}))
@@ -65,7 +65,7 @@ const Result = () => {
     }
     
   },[user])
-  
+
   // fetch project every 10 sec
 
   useEffect(()=> {
