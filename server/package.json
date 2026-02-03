@@ -14,16 +14,20 @@
   "license": "ISC",
   "dependencies": {
     "@clerk/express": "^1.7.67",
+    "@google/genai": "^1.39.0",
     "@prisma/adapter-pg": "^7.3.0",
     "@prisma/client": "^7.3.0",
     "@sentry/node": "^10.38.0",
+    "cloudinary": "^2.9.0",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
+    "multer": "^2.0.2",
     "pg": "^8.18.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
+    "@types/multer": "^2.0.0",
     "@types/node": "^25.2.0",
     "@types/pg": "^8.16.0",
     "cors": "^2.8.6",
