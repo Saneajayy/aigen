@@ -12,7 +12,7 @@ import Plans from './pages/Plans';
 import Loading from './pages/Loading';
 import { Toaster } from 'react-hot-toast';
 
-
+//UPDATE
 function App() {
 	return (
 		<> 
