@@ -3,56 +3,44 @@ UGC.ai – AI Shorts Video Generator
 UGC.ai is a production-ready AI SaaS application that generates short-form video content using artificial intelligence.
 It helps creators and businesses generate video scripts, captions, and prompts for platforms such as YouTube Shorts, Instagram Reels, and TikTok.
 
-Features
+## Features
 
-AI-based short-form video script generation
+- AI-based short-form video script generation  
+- Automatic caption and prompt generation  
+- Secure user authentication  
+- Subscription-based access to paid features  
+- Production-grade database storage  
+- Error monitoring and performance tracking  
+- Scalable serverless deployment  
 
-Automatic caption and prompt generation
+---
 
-Secure user authentication
+## Tech Stack
 
-Subscription-based access to paid features
+### Frontend
+- React  
+- TypeScript  
 
-Production-grade database storage
+### Backend
+- Node.js  
+- Express.js  
 
-Error monitoring and performance tracking
+### Database
+- PostgreSQL  
+- Neon  
 
-Scalable serverless deployment
+### AI Integration
+- Google Gemini API  
 
-Tech Stack
-Frontend
+### Authentication and Billing
+- Clerk  
 
-React
+### Monitoring
+- Sentry  
 
-TypeScript
+### Deployment
+- Vercel  
 
-Backend
-
-Node.js
-
-Express.js
-
-Database
-
-PostgreSQL
-
-Neon (Serverless PostgreSQL)
-
-AI Integration
-
-Google Gemini API
-
-Authentication and Billing
-
-Clerk
-
-Monitoring
-
-Sentry
-
-Deployment
-
-Vercel
 
 Architecture Overview
 
