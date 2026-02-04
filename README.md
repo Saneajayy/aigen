@@ -1,75 +1,83 @@
-🚀 UGC.ai – AI Shorts Video Generator
+UGC.ai – AI Shorts Video Generator
 
-UGC.ai is a production-ready AI SaaS platform that automatically generates short-form video content using AI. It helps creators and businesses quickly generate scripts, captions, and prompts for short videos (Reels, Shorts, TikTok) with minimal effort.
+UGC.ai is a production-ready AI SaaS application that generates short-form video content using artificial intelligence.
+It helps creators and businesses generate video scripts, captions, and prompts for platforms such as YouTube Shorts, Instagram Reels, and TikTok.
 
-✨ Features
+Features
 
-🤖 AI-Powered Content Generation
-Generate short-form video scripts, captions, and prompts using Google Gemini API.
+AI-based short-form video script generation
 
-🔐 Authentication & Subscription Billing
-Secure user authentication and paid feature access powered by Clerk.
+Automatic caption and prompt generation
 
-🧠 Scalable Full-Stack Architecture
-Built using a PERN stack (PostgreSQL, Express, React, Node.js).
+Secure user authentication
 
-🗄️ Production-Grade Database
-PostgreSQL hosted on Neon for reliable and scalable data storage.
+Subscription-based access to paid features
 
-📊 Monitoring & Error Tracking
-Real-time performance monitoring and error tracking using Sentry.
+Production-grade database storage
 
-☁️ Serverless Deployment
-Deployed on Vercel for fast, scalable, and reliable production delivery.
+Error monitoring and performance tracking
 
-🛠️ Tech Stack
+Scalable serverless deployment
+
+Tech Stack
 Frontend
---------
+
 React
+
 TypeScript
 
 Backend
--------
+
 Node.js
+
 Express.js
 
 Database
---------
-PostgreSQL (Neon)
+
+PostgreSQL
+
+Neon (Serverless PostgreSQL)
 
 AI Integration
---------------
+
 Google Gemini API
 
-Authentication & Billing
-------------------------
+Authentication and Billing
+
 Clerk
 
 Monitoring
-----------
+
 Sentry
 
 Deployment
-----------
+
 Vercel
 
-🏗️ Architecture Overview
-------------------------
+Architecture Overview
 
-- Client-side React application for user interaction
-- RESTful APIs built with Node.js & Express
-- AI content generation handled via Google Gemini API
-- PostgreSQL database for users, projects, and subscription data
-- Serverless deployment with environment-based configuration
+Client-side application built with React
 
-⚙️ Getting Started
+RESTful backend APIs using Node.js and Express
+
+AI content generation handled through Google Gemini API
+
+PostgreSQL database for users, projects, and subscriptions
+
+Serverless deployment with environment-based configuration
+
+Getting Started
 Prerequisites
--------------
-- Node.js (v18+ recommended)
-- PostgreSQL database (Neon or local)
-- Google Gemini API key
-- Clerk account
-- Sentry account (optional)
+
+Node.js (version 18 or higher)
+
+PostgreSQL database (Neon or local)
+
+Google Gemini API key
+
+Clerk account
+
+Sentry account (optional)
 
 Installation
 git clone https://github.com/your-username/ugc-ai.git
@@ -78,7 +86,7 @@ npm install
 
 Environment Variables
 
-Create a .env file in the root directory:
+Create a .env file in the root directory and add the following:
 
 DATABASE_URL=your_postgresql_url
 GEMINI_API_KEY=your_gemini_api_key
@@ -94,22 +102,24 @@ The application will be available at:
 
 http://localhost:3000
 
-📦 Deployment
+Deployment
 
-The application is deployed on Vercel using a serverless architecture.
+The application is deployed using Vercel with a serverless architecture.
 
-To deploy your own version:
+Deployment steps:
 
 Push the repository to GitHub
 
-Connect it to Vercel
+Connect the repository to Vercel
 
-Add environment variables in the Vercel dashboard
+Configure environment variables in the Vercel dashboard
 
-Deploy 🚀
+Deploy the application
 
-📌 Project Status
+Project Status
 
-✅ Core features completed
-🔄 Actively improving UI, performance, and AI prompts
-🧪 Future plans include analytics, templates, and multi-language support
+Core features completed
+
+Actively improving performance and UI
+
+Planned features include analytics, templates, and multi-language support
