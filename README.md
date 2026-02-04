@@ -24,61 +24,52 @@ Deployed on Vercel for fast, scalable, and reliable production delivery.
 
 🛠️ Tech Stack
 Frontend
-
+--------
 React
-
 TypeScript
 
 Backend
-
+-------
 Node.js
-
 Express.js
 
 Database
-
+--------
 PostgreSQL (Neon)
 
 AI Integration
-
+--------------
 Google Gemini API
 
 Authentication & Billing
-
+------------------------
 Clerk
 
 Monitoring
-
+----------
 Sentry
 
 Deployment
-
+----------
 Vercel
 
 🏗️ Architecture Overview
+------------------------
 
-Client-side React application for user interaction
-
-RESTful APIs built with Node.js & Express
-
-AI content generation handled via Google Gemini API
-
-PostgreSQL database for users, projects, and subscription data
-
-Serverless deployment with environment-based configuration
+- Client-side React application for user interaction
+- RESTful APIs built with Node.js & Express
+- AI content generation handled via Google Gemini API
+- PostgreSQL database for users, projects, and subscription data
+- Serverless deployment with environment-based configuration
 
 ⚙️ Getting Started
 Prerequisites
-
-Node.js (v18+ recommended)
-
-PostgreSQL database (Neon or local)
-
-Google Gemini API key
-
-Clerk account
-
-Sentry account (optional)
+-------------
+- Node.js (v18+ recommended)
+- PostgreSQL database (Neon or local)
+- Google Gemini API key
+- Clerk account
+- Sentry account (optional)
 
 Installation
 git clone https://github.com/your-username/ugc-ai.git
