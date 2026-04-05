@@ -130,12 +130,12 @@ const ProjectCard = ({ gen, setGenerations, forCommunity = false }:
                     <div className="flex items-start justify-between gap-4">
                         <div className="flex-1">
                             <h3 className="font-medium text-lg mb-1">{gen.productName}</h3>
-                            <p className="text-sm text-gray-400">Created : {new Date(gen.createdAt).toLocaleString('en-US', {
+                            <p className="text-sm text-gray-400">Created : {gen.createdAt ? new Date(gen.createdAt as string | number | Date).toLocaleString('en-US', {
                                 dateStyle: 'medium',
                                 timeStyle: 'short'
-                            })}</p>
+                            }) : 'Unknown'}</p>
                             {gen.updatedAt && (
-                                <p className="text-xs text-gray-500 mt-1">Updated : {new Date(gen.updatedAt).toLocaleString('en-US', {
+                                <p className="text-xs text-gray-500 mt-1">Updated : {new Date(gen.updatedAt as string | number | Date).toLocaleString('en-US', {
                                     dateStyle: 'medium',
                                     timeStyle: 'short'
                                 })}</p>
