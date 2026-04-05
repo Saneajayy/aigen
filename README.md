@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-  <h1>🌟 AIGen Studio</h1>
+  <h1>🌟 AI VIDEO GENERATOR </h1>
   <p><strong>A Next-Generation Full-Stack AI Image & Video Generation Platform</strong></p>
   <p>
     <img alt="React" src="https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react">
