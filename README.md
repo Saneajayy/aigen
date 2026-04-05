@@ -1,6 +1,5 @@
 <div align="center">
   <br />
-  <img src="client/public/logo.svg" alt="AIGen Logo" width="100"/>
   <h1>🌟 AIGen Studio</h1>
   <p><strong>A Next-Generation Full-Stack AI Image & Video Generation Platform</strong></p>
   <p>
