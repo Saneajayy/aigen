@@ -1,136 +1,94 @@
-# UGC.ai – AI Shorts Video Generator
+<div align="center">
+  <br />
+  <img src="client/public/logo.svg" alt="AIGen Logo" width="100"/>
+  <h1>🌟 AIGen Studio</h1>
+  <p><strong>A Next-Generation Full-Stack AI Image & Video Generation Platform</strong></p>
+  <p>
+    <img alt="React" src="https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react">
+    <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5.9-blue?style=for-the-badge&logo=typescript">
+    <img alt="Express" src="https://img.shields.io/badge/Express-5.2-green?style=for-the-badge&logo=express">
+    <img alt="Prisma" src="https://img.shields.io/badge/Prisma-7.3-indigo?style=for-the-badge&logo=prisma">
+    <img alt="PostgreSQL" src="https://img.shields.io/badge/Node.js-24-green?style=for-the-badge&logo=node.js">
+  </p>
+</div>
 
-------------------------------------------------------------
+<br />
 
-UGC.ai is a production-ready AI SaaS application that generates short-form video content using artificial intelligence.
+## 📖 About The Project
 
-It enables creators and businesses to generate video scripts, captions, and prompts for platforms such as YouTube Shorts, Instagram Reels, and TikTok.
+**AIGen Studio** is a state-of-the-art Generative AI Web Application built for creators. It leverages cutting-edge Google Generative AI capabilities coupled with a high-performance React Frontend and a robust Express/Prisma Backend to provide a seamless digital asset creation pipeline. 
 
-============================================================
+From lightning-fast AI prompt digestion to complex aspect-ratio-aware video generations, AIGen brings your creativity to life.
 
-## FEATURES
+---
 
-------------------------------------------------------------
+## ✨ Key Features
 
-- AI-based short-form video script generation
-- Automatic caption and prompt generation
-- Secure user authentication
-- Subscription-based access to paid features
-- Production-grade database storage
-- Error monitoring and performance tracking
-- Scalable serverless deployment
+- 🎨 **Generative AI Workflows**: High-quality Image & Video generation utilizing Google GenAI.
+- 🔐 **Secure Authentication**: Iron-clad security via **Clerk** Authentication with active webhook syncing.
+- ☁️ **Cloud Storage Integration**: Seamless asset uploading, storage, and retrieval optimized with **Cloudinary**.
+- 🚀 **Responsive & Animated UI**: Crafted with **TailwindCSS** and **Framer Motion** for butter-smooth interactions.
+- 💳 **Integrated Pricing Architecture**: Comprehensive billing models using active payment endpoints.
+- 📈 **Error Observability**: Deep application monitoring powered securely by **Sentry**.
 
-============================================================
+---
 
-## TECH STACK
+## 🛠 Tech Stack
 
-------------------------------------------------------------
+### Client (Frontend)
+- **Framework**: [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/) & Lenis
+- **Authentication**: [@clerk/clerk-react](https://clerk.com/)
 
-### Frontend
-- React
-- TypeScript
+### Server (Backend)
+- **Runtime Environment**: [Node.js](https://nodejs.org/en) & [Express](https://expressjs.com/)
+- **Database & ORM**: [PostgreSQL] via [Prisma](https://www.prisma.io/) Configured for NeonDB
+- **AI Integrations**: [@google/genai](https://ai.google.dev/)
+- **Media Optimization**: [Cloudinary](https://cloudinary.com/)
+- **Monitoring**: [Sentry](https://sentry.io/)
 
-------------------------------------------------------------
+---
 
-### Backend
-- Node.js
-- Express.js
+## 🚀 Getting Started
 
-------------------------------------------------------------
+Follow these steps to set up the project locally.
 
-### Database
-- PostgreSQL
-- Neon (Serverless PostgreSQL)
-
-------------------------------------------------------------
-
-### AI Integration
-- Google Gemini API
-
-------------------------------------------------------------
-
-### Authentication and Billing
-- Clerk
-
-------------------------------------------------------------
-
-### Monitoring
-- Sentry
-
-------------------------------------------------------------
-
-### Deployment
-- Vercel
-
-============================================================
-
-## ARCHITECTURE OVERVIEW
-
-------------------------------------------------------------
-
-- Client-side application built using React and TypeScript
-- RESTful APIs developed with Node.js and Express
-- AI content generation handled via Google Gemini API
-- PostgreSQL database for users, projects, and subscriptions
-- Serverless deployment with environment-based configuration
-
-============================================================
-
-## GETTING STARTED
-
-------------------------------------------------------------
-
-### Prerequisites
-
-- Node.js (v18 or higher)
-- PostgreSQL database (Neon or local)
-- Google Gemini API key
-- Clerk account
-- Sentry account (optional)
-
-------------------------------------------------------------
-
-### Installation
-
+### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/ugc-ai.git
-cd ugc-ai
+git clone https://github.com/Saneajayy/aigen.git
+cd aigen
+```
+
+### 2. Environment Variables setup
+Make sure to create a `.env` file in both the `client` and `server` directories based on your local requirements.
+> **Note:** The server strictly requires Google GenAI keys, Prisma Database URLs, and Clerk Webhook signers.
+
+### 3. Install & Run Server
+```bash
+cd server
 npm install
-Environment Variables
-Create a .env file in the root directory:
+npm run server
+```
 
-DATABASE_URL=your_postgresql_url
-GEMINI_API_KEY=your_gemini_api_key
-CLERK_SECRET_KEY=your_clerk_secret_key
-CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
-SENTRY_DSN=your_sentry_dsn
-Run Locally
+### 4. Install & Run Client (in a new terminal)
+```bash
+cd client
+npm install
 npm run dev
-Application will be available at:
+```
 
-http://localhost:3000
-============================================================
+---
 
-DEPLOYMENT
-The application is deployed using Vercel with a serverless architecture.
+## 🌎 Deployment (Vercel)
 
-Steps:
+AIGen Studio has been rigorously configured for native Vercel Edge & Severless operations.
 
-Push the repository to GitHub
+1. **Deploying Server**: Import the repository and select `/server` as root. Set up your production `.env` variables and verify Vercel executes standard `npm run build` and `prisma generate` natively.
+2. **Deploying Client**: Import similarly utilizing the `/client` directory. Assure `VITE_BASEURL` bridges identical domain parameters against the Vercel-generated server URL!
 
-Connect the repository to Vercel
+---
 
-Add environment variables in the Vercel dashboard
-
-Deploy the application
-
-============================================================
-
-PROJECT STATUS
-Core features completed
-
-Performance and UI improvements in progress
-
-Planned features include analytics and templates
-
-============================================================
+<div align="center">
+  <p>Built with ❤️ by <a href="https://github.com/Saneajayy">Ajay Kumar</a></p>
+</div>
